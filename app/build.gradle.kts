@@ -3,7 +3,6 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.kotlin.serialization)
-    id("kotlin-kapt")
     id("androidx.room")
     alias(libs.plugins.ksp)
     alias(libs.plugins.hilt)
@@ -21,7 +20,6 @@ android {
         versionCode = 1
         versionName = "1.0"
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
@@ -62,33 +60,13 @@ dependencies {
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.activity)
-    implementation(libs.androidx.constraintlayout)
-//    testImplementation(libs.junit)
-//    testImplementation(libs.testng)
-//    testImplementation(libs.junit.junit)
-    androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
-    androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
-    // xml
-    implementation(libs.xmlutil.core)
-    implementation(libs.xmlutil.serialization)
-
-    // retrofit
-    implementation(libs.retrofit2)
-    implementation(libs.retrofit2.kotlinx.serialization.converter)
-
     // coil
     implementation(libs.coil)
-
-    // room
-    implementation(libs.androidx.room.runtime)
-    annotationProcessor(libs.androidx.room.compiler)
-    implementation(libs.androidx.room.ktx)
-    ksp(libs.androidx.room.compiler)
 
     // hilt
     implementation(libs.hilt.android)
@@ -102,8 +80,6 @@ dependencies {
     implementation(libs.kotlinx.coroutines.core)
     implementation(libs.kotlinx.coroutines.android)
 
-    // recycler
-    implementation(libs.androidx.recyclerview)
 
     // kaspresso
     androidTestImplementation("com.kaspersky.android-components:kaspresso:1.5.1")
@@ -112,7 +88,6 @@ dependencies {
     // test
     testImplementation("org.mockito:mockito-core:5.18.0")
     testImplementation("org.mockito.kotlin:mockito-kotlin:5.4.0")
-    testImplementation("junit:junit:4.13.2")
     testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.0")
 
 
