@@ -23,7 +23,6 @@ fun BottomNavigationBar(
 
     val items = listOf(
         Destinations.Currencies,
-        Destinations.Exchange,
         Destinations.Transactions
     )
 
@@ -55,15 +54,15 @@ fun BottomNavigationBar(
 private fun findIcon(destination: Destinations): Int {
     return when (destination) {
         is Destinations.Currencies -> R.drawable.currencies_ic
-        is Destinations.Exchange -> R.drawable.exchange_ic
         is Destinations.Transactions -> R.drawable.transactions_ic
+        else -> R.drawable.exchange_ic
     }
 }
 
 private fun findLabel(destination: Destinations): String {
     return when (destination) {
         is Destinations.Currencies -> "Валюты"
-        is Destinations.Exchange -> "Обмен"
         is Destinations.Transactions -> "История"
+        else -> ""
     }
 }
