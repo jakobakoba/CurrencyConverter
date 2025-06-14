@@ -12,6 +12,9 @@ interface AccountDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAll(vararg accounts: AccountDbo)
 
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insert(account: AccountDbo)
+
     @Query("SELECT * FROM accounts")
     suspend fun getAll(): List<AccountDbo>
 
