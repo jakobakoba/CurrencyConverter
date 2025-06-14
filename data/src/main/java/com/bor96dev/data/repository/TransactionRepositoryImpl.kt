@@ -23,8 +23,8 @@ class TransactionRepositoryImpl @Inject constructor(
     }
 
     override fun getTransactionsFlow(): Flow<List<Transaction>> {
-        return transactionDao.getAllOrderedByDate().map { dboList -> // dboList теперь List<TransactionDbo>
-            dboList.map { dbo -> // dbo теперь TransactionDbo
+        return transactionDao.getAllOrderedByDate().map { dboList ->
+            dboList.map { dbo ->
                 dbo.toDomain()
             }
         }

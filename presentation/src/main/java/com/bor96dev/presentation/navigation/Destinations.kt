@@ -3,7 +3,7 @@ package com.bor96dev.presentation.navigation
 import androidx.navigation.NavType
 import androidx.navigation.navArgument
 
-sealed class Destinations(val routeDefinition: String) { // Переименовал в routeDefinition для ясности
+sealed class Destinations(val routeDefinition: String) {
 
     object Currencies : Destinations("currencies")
 

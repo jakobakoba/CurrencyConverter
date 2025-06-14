@@ -39,7 +39,7 @@ class MainActivity : ComponentActivity() {
                 ) { innerPadding ->
                     NavGraph(
                         navController = navController,
-                        currenciesViewModel = currenciesViewModel, // Передаем созданный ViewModel в NavGraph
+                        currenciesViewModel = currenciesViewModel,
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
