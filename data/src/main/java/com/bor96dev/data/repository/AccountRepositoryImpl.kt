@@ -1,6 +1,7 @@
 package com.bor96dev.data.repository
 
 import com.bor96dev.data.dataSource.room.account.dao.AccountDao
+import com.bor96dev.data.dataSource.room.account.dbo.AccountDbo
 import com.bor96dev.data.mapper.toDbo
 import com.bor96dev.data.mapper.toDomain
 import com.bor96dev.domain.entity.Account
@@ -17,27 +18,25 @@ class AccountRepositoryImpl @Inject constructor(
     }
 
     override suspend fun getAccountByCode(code: String): Account? {
-        val amount = accountDao.getAmountByCode(code)
-        return if (amount != null){
+        return accountDao.getAmountByCode(code)?.let {amount ->
             Account(currencyCode = code, amount = amount)
-        } else null
+        }
     }
 
     override suspend fun updateAccount(account: Account) {
-        accountDao.updateAmount(account.currencyCode, account.amount)
+        accountDao.insertAll(account.toDbo())
     }
 
     override suspend fun initializeWithRubles() {
-        val existingRubles = accountDao.getAmountByCode("RUB")
-        if(existingRubles  == null){
-            val rublesAccount = Account(currencyCode = "RUB", amount = 75000.0)
-            accountDao.insertAll(rublesAccount.toDbo())
+        val rubAccount = accountDao.getAmountByCode("RUB")
+        if (rubAccount == null){
+            accountDao.insertAll(AccountDbo(code = "RUB", amount = 75000.0))
         }
     }
 
     override fun getAccountsFlow(): Flow<List<Account>> {
-        return accountDao.getAllAsFlow().map{dboList ->
-            dboList.map{it.toDomain()}
+        return accountDao.getAllAsFlow().map{listDbo ->
+            listDbo.map{it.toDomain()}
         }
     }
 }
