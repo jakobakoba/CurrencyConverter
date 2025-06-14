@@ -6,6 +6,7 @@ data class CurrenciesUiState (
     val viewMode: ViewMode = ViewMode.LIST,
     val selectedCurrency: String = "RUB",
     val inputAmount: Double = 1.0,
+    val rawInputString: String = "1",
     val currencies: List<CurrencyWithBalance> = emptyList(),
     val isLoading: Boolean = false,
     val error: String? = null

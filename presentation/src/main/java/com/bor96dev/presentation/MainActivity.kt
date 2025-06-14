@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.rememberNavController
 import com.bor96dev.presentation.composables.BottomNavigationBar
 import com.bor96dev.presentation.currencies.CurrenciesViewModel
@@ -25,20 +26,20 @@ class MainActivity : ComponentActivity() {
         setContent {
             CurrencyConverterTheme {
                 val navController = rememberNavController()
-                val viewModel: CurrenciesViewModel = hiltViewModel()
+                val currenciesViewModel: CurrenciesViewModel = hiltViewModel()
+
                 Scaffold(
                     modifier = Modifier.Companion.fillMaxSize(),
                     bottomBar = {
                         BottomNavigationBar(
                             navController = navController,
-                            viewModel = viewModel
                         )
                     }
 
                 ) { innerPadding ->
                     NavGraph(
                         navController = navController,
-                        viewModel = viewModel,
+                        currenciesViewModel = currenciesViewModel, // Передаем созданный ViewModel в NavGraph
                         modifier = Modifier.padding(innerPadding)
                     )
                 }

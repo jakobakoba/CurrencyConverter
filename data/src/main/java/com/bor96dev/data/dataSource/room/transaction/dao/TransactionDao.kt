@@ -4,6 +4,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
 import com.bor96dev.data.dataSource.room.transaction.dbo.TransactionDbo
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface TransactionDao {
@@ -14,5 +15,5 @@ interface TransactionDao {
     suspend fun getAll(): List<TransactionDbo>
 
     @Query("SELECT * FROM transactions ORDER BY dateTime DESC")
-    suspend fun getAllOrderedByDate(): List<TransactionDbo>
+    fun getAllOrderedByDate(): Flow<List<TransactionDbo>>
 }

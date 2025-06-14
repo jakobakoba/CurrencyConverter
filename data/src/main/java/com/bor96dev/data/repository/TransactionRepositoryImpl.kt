@@ -6,6 +6,7 @@ import com.bor96dev.data.mapper.toDomain
 import com.bor96dev.domain.entity.Transaction
 import com.bor96dev.domain.repository.TransactionRepository
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
 class TransactionRepositoryImpl @Inject constructor(
@@ -16,15 +17,16 @@ class TransactionRepositoryImpl @Inject constructor(
     }
 
     override suspend fun getAllTransactions(): List<Transaction> {
-        return transactionDao.getAllOrderedByDate().map{
+        return transactionDao.getAll().sortedByDescending { it.dateTime }.map{
             it.toDomain()
         }
     }
 
     override fun getTransactionsFlow(): Flow<List<Transaction>> {
-        return transactionDao.getAllOrderedByDate().map{
-            dboList ->
-            dboList.map{it.toDomain()}
+        return transactionDao.getAllOrderedByDate().map { dboList -> // dboList теперь List<TransactionDbo>
+            dboList.map { dbo -> // dbo теперь TransactionDbo
+                dbo.toDomain()
+            }
         }
     }
 
