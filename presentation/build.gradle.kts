@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.ksp)
     id("org.jetbrains.kotlin.plugin.compose") version "2.0.0"
+    alias(libs.plugins.hilt)
 }
 
 android {
@@ -44,6 +45,8 @@ dependencies {
     implementation(libs.coil)
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
+
+    implementation(libs.hilt.navigation.compose)
 
     implementation(libs.androidx.material3)
     implementation(platform(libs.androidx.compose.bom))
