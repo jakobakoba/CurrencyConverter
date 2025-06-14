@@ -1,4 +1,4 @@
-package com.bor96dev.data.dataSource.remote
+package com.bor96dev.data.dataSource.room
 
 import com.bor96dev.data.dataSource.remote.dto.RateDto
 
