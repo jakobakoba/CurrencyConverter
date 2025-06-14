@@ -61,4 +61,14 @@ class CurrenciesViewModel @Inject constructor(
         _uiState.value = _uiState.value.copy(inputAmount = amount)
         loadRates()
     }
+
+    private fun loadRates() {
+        viewModelScope.launch{
+            val rates = getCurrencyRatesUseCase(
+                baseCurrency = _uiState.value.selectedCurrency,
+                amount = _uiState.value.inputAmount
+            )
+            _uiState.value =  _uiState.value.copy(currencies = rates)
+        }
+    }
 }
