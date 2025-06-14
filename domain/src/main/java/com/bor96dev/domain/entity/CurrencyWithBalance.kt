@@ -4,5 +4,5 @@ data class CurrencyWithBalance (
     val currency: String,
     val rate: Double,
     val balance: Double,
-    val flag: Int
+    val flag: String
 )
