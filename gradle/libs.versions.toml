@@ -21,6 +21,7 @@ testng = "6.9.6"
 jetbrainsKotlinJvm = "2.0.0"
 navVersion = "2.8.9"
 gson = "2.11.0"
+hiltNavigationVersion = "1.2.0"
 
 
 [libraries]
@@ -54,6 +55,8 @@ androidx-activity = { group = "androidx.activity", name = "activity", version.re
 
 navigation-compose = {group = "androidx.navigation", name = "navigation-compose", version.ref = "navVersion"}
 gson = {group = "com.google.code.gson", name = "gson", version.ref = "gson"}
+
+hilt-navigation-compose = {group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hiltNavigationVersion" }
 
 
 [plugins]

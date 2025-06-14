@@ -3,7 +3,7 @@
 
     <application>
         <activity
-            android:name="com.bor96dev.presentation.ui.MainActivity"
+            android:name="com.bor96dev.presentation.MainActivity"
             android:exported="true"
             >
             <intent-filter>
