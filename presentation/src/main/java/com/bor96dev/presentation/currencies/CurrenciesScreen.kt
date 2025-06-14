@@ -40,14 +40,6 @@ fun CurrenciesScreen(
         topBar = {
             TopAppBar(
                 title = { Text("Валюты") },
-                actions = {
-                    IconButton(onClick = onNavigateToTransactions) {
-                        Icon(
-                            painter = painterResource(id = R.drawable.transactions_ic),
-                            contentDescription = "История транзакций"
-                        )
-                    }
-                }
             )
         }
     ) { paddingValues ->
