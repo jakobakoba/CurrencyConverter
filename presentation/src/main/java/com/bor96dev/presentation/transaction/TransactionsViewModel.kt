@@ -1,4 +1,4 @@
-package com.bor96dev.presentation
+package com.bor96dev.presentation.transaction
 
 import androidx.lifecycle.ViewModel
 

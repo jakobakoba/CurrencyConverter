@@ -3,12 +3,12 @@ package com.bor96dev.presentation.navigation
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
-import com.bor96dev.presentation.CurrenciesViewModel
+import com.bor96dev.presentation.currencies.CurrenciesViewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.bor96dev.presentation.screens.CurrenciesScreen
-import com.bor96dev.presentation.screens.ExchangeScreen
-import com.bor96dev.presentation.screens.TransactionScreen
+import com.bor96dev.presentation.currencies.CurrenciesScreen
+import com.bor96dev.presentation.exchange.ExchangeScreen
+import com.bor96dev.presentation.transaction.TransactionScreen
 
 @Composable
 fun NavGraph(

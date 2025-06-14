@@ -11,6 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.compose.rememberNavController
 import com.bor96dev.presentation.composables.BottomNavigationBar
+import com.bor96dev.presentation.currencies.CurrenciesViewModel
 import com.bor96dev.presentation.navigation.NavGraph
 import com.bor96dev.presentation.ui.theme.CurrencyConverterTheme
 import dagger.hilt.android.AndroidEntryPoint

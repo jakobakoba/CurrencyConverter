@@ -1,4 +1,4 @@
-package com.bor96dev.presentation.screens
+package com.bor96dev.presentation.transaction
 
 import androidx.compose.runtime.Composable
 import androidx.compose.material3.Text
