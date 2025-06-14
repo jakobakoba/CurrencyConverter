@@ -12,4 +12,7 @@ interface TransactionDao {
 
     @Query("SELECT * FROM transactions")
     suspend fun getAll(): List<TransactionDbo>
+
+    @Query("SELECT * FROM transactions ORDER BY dateTime DESC")
+    suspend fun getAllOrderedByDate(): List<TransactionDbo>
 }

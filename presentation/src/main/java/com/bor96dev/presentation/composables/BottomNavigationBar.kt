@@ -8,7 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.res.painterResource
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
-import com.bor96dev.presentation.MainViewModel
+import com.bor96dev.presentation.CurrenciesViewModel
 import com.bor96dev.presentation.R
 import com.bor96dev.presentation.navigation.Destinations
 import androidx.compose.runtime.getValue
@@ -16,7 +16,7 @@ import androidx.compose.runtime.getValue
 @Composable
 fun BottomNavigationBar(
     navController: NavController,
-    viewModel: MainViewModel
+    viewModel: CurrenciesViewModel
 ) {
 
     val items = listOf(

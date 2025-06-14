@@ -24,7 +24,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             CurrencyConverterTheme {
                 val navController = rememberNavController()
-                val viewModel: MainViewModel = hiltViewModel()
+                val viewModel: CurrenciesViewModel = hiltViewModel()
                 Scaffold(
                     modifier = Modifier.Companion.fillMaxSize(),
                     bottomBar = {
