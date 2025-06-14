@@ -1,6 +1,4 @@
-package com.bor96dev.data.dataSource.remote
-
-import com.bor96dev.data.dataSource.remote.dto.RateDto
+package com.bor96dev.domain
 
 interface RatesService {
     suspend fun getRates(

@@ -1,6 +1,7 @@
 package com.bor96dev.data.dataSource.remote
 
 import com.bor96dev.data.dataSource.remote.dto.RateDto
+import com.bor96dev.domain.RatesService
 import kotlinx.coroutines.delay
 import kotlin.random.Random
 
